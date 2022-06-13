@@ -20,12 +20,18 @@ using namespace std;
 class BookNode {
 public:
     BookNode();
+    BookNode(string titleParam, string authorParam);
+    BookNode(string titleParam, string authorParam, int numCopiesParam);
     BookNode(string titleParam, string authorParam, int numCopiesParam, BookNode *nextParam);
     BookNode(const BookNode& orig);
     virtual ~BookNode();
     string getTitle() const;
     string getAuthor() const;
+    int getNumAvailable() const;
+    void setNumAvailable(int newNumAvailable);
     void setNextBook(BookNode *next);
+    BookNode* getNextBook();
+    void print() const;
 private:
     string title;
     string author;

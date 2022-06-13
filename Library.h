@@ -19,15 +19,20 @@ class Library {
 public:
     Library();
     Library(const Library& orig);
-    virtual ~Library();
+    virtual ~Library();    
+    void returnBook(string title, string);
+    void deleteBook(BookNode *bookNode);    
+    void printByAuthor(string author);
+    void checkout(string title, string author);
+    BookNode* search(string title, string author);
+    BookNode* getHead();
+    void searchAndUpdateOrDelete(BookNode *bookNode);
+    void setHead(BookNode *newHead);
+    void printBookList(BookNode *startBook, bool firstCall);
     
-    void insertBook(BookNode *bookNode);
-    void deleteBook();
-    void search();
-    void print();
     
-    
-private:
+private:    
+    BookNode *head;
 
 };
 
